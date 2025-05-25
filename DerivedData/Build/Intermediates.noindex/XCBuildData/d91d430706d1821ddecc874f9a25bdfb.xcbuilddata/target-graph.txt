@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'MyCounterApp2' in project 'MyCounterApp2'
+➜ Explicit dependency on target 'myWidgetExtension' in project 'MyCounterApp2'
+Target 'myWidgetExtension' in project 'MyCounterApp2' (no dependencies)

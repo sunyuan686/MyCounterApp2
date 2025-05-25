@@ -1,0 +1,38 @@
+{
+  "" : {
+    "diagnostics" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2-master.dia",
+    "emit-module-dependencies" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2-master-emit-module.dia",
+    "swift-dependencies" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2-master.swiftdeps"
+  },
+  "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/sunyuan/develop/project/ios/MyCounterApp2/MyCounterApp2/ContentView.swift" : {
+    "const-values" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/sunyuan/develop/project/ios/MyCounterApp2/MyCounterApp2/MyCounterApp2App.swift" : {
+    "const-values" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2App.swiftconstvalues",
+    "dependencies" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2App.d",
+    "diagnostics" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2App.dia",
+    "index-unit-output-path" : "/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2App.o",
+    "llvm-bc" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2App.bc",
+    "object" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2App.o",
+    "swift-dependencies" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2App.swiftdeps",
+    "swiftmodule" : "/Users/sunyuan/develop/project/ios/MyCounterApp2/DerivedData/Build/Intermediates.noindex/MyCounterApp2.build/Debug-iphonesimulator/MyCounterApp2.build/Objects-normal/arm64/MyCounterApp2App~partial.swiftmodule"
+  }
+}

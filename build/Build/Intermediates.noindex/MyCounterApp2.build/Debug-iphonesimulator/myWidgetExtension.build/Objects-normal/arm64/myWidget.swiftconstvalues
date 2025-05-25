@@ -1,0 +1,116 @@
+[
+  {
+    "typeName": "myWidgetExtension.IncrementIntent",
+    "mangledTypeName": "17myWidgetExtension15IncrementIntentV",
+    "kind": "struct",
+    "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
+    "line": 212,
+    "conformances": [
+      "AppIntents.AppIntent",
+      "AppIntents.PersistentlyIdentifiable",
+      "AppIntents._SupportsAppDependencies",
+      "Swift.Sendable"
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "PerformResult",
+        "substitutedTypeName": "some AppIntents.IntentResult",
+        "substitutedMangledTypeName": "17myWidgetExtension15IncrementIntentV7performQryYaKFQOy_Qo_",
+        "opaqueTypeProtocolRequirements": [
+          "AppIntents.IntentResult"
+        ],
+        "opaqueTypeSameTypeRequirements": []
+      },
+      {
+        "typeAliasName": "SummaryContent",
+        "substitutedTypeName": "some AppIntents.ParameterSummary",
+        "substitutedMangledTypeName": "10AppIntents0A6IntentPAAE16parameterSummaryQrvpZQOy17myWidgetExtension09IncrementC0V_Qo_",
+        "opaqueTypeProtocolRequirements": [
+          "AppIntents.ParameterSummary"
+        ],
+        "opaqueTypeSameTypeRequirements": []
+      }
+    ],
+    "properties": [
+      {
+        "label": "title",
+        "type": "Foundation.LocalizedStringResource",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
+        "line": 213,
+        "valueKind": "RawLiteral",
+        "value": "增加计数"
+      },
+      {
+        "label": "description",
+        "type": "AppIntents.IntentDescription",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
+        "line": 214,
+        "valueKind": "RawLiteral",
+        "value": "将计数器值增加1"
+      }
+    ]
+  },
+  {
+    "typeName": "myWidgetExtension.DecrementIntent",
+    "mangledTypeName": "17myWidgetExtension15DecrementIntentV",
+    "kind": "struct",
+    "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
+    "line": 229,
+    "conformances": [
+      "AppIntents.AppIntent",
+      "AppIntents.PersistentlyIdentifiable",
+      "AppIntents._SupportsAppDependencies",
+      "Swift.Sendable"
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "PerformResult",
+        "substitutedTypeName": "some AppIntents.IntentResult",
+        "substitutedMangledTypeName": "17myWidgetExtension15DecrementIntentV7performQryYaKFQOy_Qo_",
+        "opaqueTypeProtocolRequirements": [
+          "AppIntents.IntentResult"
+        ],
+        "opaqueTypeSameTypeRequirements": []
+      },
+      {
+        "typeAliasName": "SummaryContent",
+        "substitutedTypeName": "some AppIntents.ParameterSummary",
+        "substitutedMangledTypeName": "10AppIntents0A6IntentPAAE16parameterSummaryQrvpZQOy17myWidgetExtension09DecrementC0V_Qo_",
+        "opaqueTypeProtocolRequirements": [
+          "AppIntents.ParameterSummary"
+        ],
+        "opaqueTypeSameTypeRequirements": []
+      }
+    ],
+    "properties": [
+      {
+        "label": "title",
+        "type": "Foundation.LocalizedStringResource",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
+        "line": 230,
+        "valueKind": "RawLiteral",
+        "value": "减少计数"
+      },
+      {
+        "label": "description",
+        "type": "AppIntents.IntentDescription",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
+        "line": 231,
+        "valueKind": "RawLiteral",
+        "value": "将计数器值减少1"
+      }
+    ]
+  }
+]

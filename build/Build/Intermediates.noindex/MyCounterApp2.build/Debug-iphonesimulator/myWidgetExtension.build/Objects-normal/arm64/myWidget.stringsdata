@@ -1,0 +1,60 @@
+{
+  "source": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "计数器"
+      },
+      {
+        "comment": "",
+        "key": "%lld"
+      },
+      {
+        "comment": "",
+        "key": "点击 +/- 操作"
+      },
+      {
+        "comment": "",
+        "key": "当前值:"
+      },
+      {
+        "comment": "",
+        "key": "上次更新: %@"
+      },
+      {
+        "comment": "",
+        "key": "减少"
+      },
+      {
+        "comment": "",
+        "key": "增加"
+      },
+      {
+        "comment": "",
+        "key": "计数器小组件"
+      },
+      {
+        "comment": "",
+        "key": "显示当前计数并支持点击增减操作"
+      },
+      {
+        "comment": "",
+        "key": "增加计数"
+      },
+      {
+        "comment": "",
+        "key": "将计数器值增加1"
+      },
+      {
+        "comment": "",
+        "key": "减少计数"
+      },
+      {
+        "comment": "",
+        "key": "将计数器值减少1"
+      }
+    ]
+  },
+  "version": 1
+}
