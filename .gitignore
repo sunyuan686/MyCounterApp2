@@ -1,0 +1,23 @@
+# Xcode
+#
+# gitignore contributors: remember to keep synchronized with Xcode.gitignore
+# https://github.com/github/gitignore/blob/master/Global/Xcode.gitignore
+
+## User settings
+xcuserdata/
+
+## Derived Data
+DerivedData/
+build/
+
+## Other
+*.moved-aside
+*.xcuserstate
+*.xcscheme
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.resolved
+.DS_Store
