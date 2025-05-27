@@ -1,33 +1,44 @@
-//
-//  SharedUserDefaults.swift
-//  MyCounterApp2
-//
-//  Created by sunyuan on 2025/5/25.
-//
-
 import Foundation
 
 class SharedUserDefaults {
     static let shared = SharedUserDefaults()
-    private let userDefaults: UserDefaults
+    
+    // 使用正确的 App Group ID
+    static let appGroupID = "group.com.sunyuan.counter"
+    
+    private let defaults: UserDefaults?
     
     private init() {
-        guard let userDefaults = UserDefaults(suiteName: "group.com.sunyuan.MyCounterApp2") else {
-            fatalError("无法创建共享UserDefaults")
-        }
-        self.userDefaults = userDefaults
+        self.defaults = UserDefaults(suiteName: Self.appGroupID)
     }
     
-    private enum Keys {
-        static let counter = "counter"
+    // 计数器值的键
+    private let counterKey = "counter"
+    
+    // 获取计数器值
+    func getCounter() -> Int {
+        return defaults?.integer(forKey: counterKey) ?? 0
     }
     
-    var counter: Int {
-        get {
-            userDefaults.integer(forKey: Keys.counter)
-        }
-        set {
-            userDefaults.set(newValue, forKey: Keys.counter)
-        }
+    // 设置计数器值
+    func setCounter(_ value: Int) {
+        defaults?.set(value, forKey: counterKey)
+    }
+    
+    // 递增计数器
+    func incrementCounter() {
+        let currentValue = getCounter()
+        setCounter(currentValue + 1)
+    }
+    
+    // 递减计数器
+    func decrementCounter() {
+        let currentValue = getCounter()
+        setCounter(currentValue - 1)
+    }
+    
+    // 重置计数器
+    func resetCounter() {
+        setCounter(0)
     }
 }

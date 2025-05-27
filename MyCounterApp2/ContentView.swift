@@ -9,8 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct ContentView: View {
-    @AppStorage("counter", store: UserDefaults(suiteName: "group.com.sunyuan.MyCounterApp2")) 
-    private var counter: Int = 0
+    @State private var counter: Int = SharedUserDefaults.shared.getCounter()
     
     var body: some View {
         VStack(spacing: 30) {
@@ -27,6 +26,7 @@ struct ContentView: View {
                 Button("-") {
                     withAnimation(.easeInOut(duration: 0.2)) {
                         counter -= 1
+                        SharedUserDefaults.shared.setCounter(counter)
                     }
                     // 刷新小组件
                     WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
@@ -41,6 +41,7 @@ struct ContentView: View {
                 Button("+") {
                     withAnimation(.easeInOut(duration: 0.2)) {
                         counter += 1
+                        SharedUserDefaults.shared.setCounter(counter)
                     }
                     // 刷新小组件
                     WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
@@ -56,6 +57,7 @@ struct ContentView: View {
             Button("重置") {
                 withAnimation(.easeInOut(duration: 0.3)) {
                     counter = 0
+                    SharedUserDefaults.shared.resetCounter()
                 }
                 // 刷新小组件
                 WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")

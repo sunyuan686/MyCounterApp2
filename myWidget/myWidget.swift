@@ -15,15 +15,13 @@ struct Provider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let sharedDefaults = UserDefaults(suiteName: "group.com.sunyuan.MyCounterApp2")
-        let counter = sharedDefaults?.integer(forKey: "counter") ?? 0
+        let counter = SharedUserDefaults.shared.getCounter()
         let entry = SimpleEntry(date: Date(), counter: counter)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let sharedDefaults = UserDefaults(suiteName: "group.com.sunyuan.MyCounterApp2")
-        let counter = sharedDefaults?.integer(forKey: "counter") ?? 0
+        let counter = SharedUserDefaults.shared.getCounter()
         let currentDate = Date()
         let entry = SimpleEntry(date: currentDate, counter: counter)
         
@@ -214,9 +212,7 @@ struct IncrementIntent: AppIntent {
     static var description = IntentDescription("将计数器值增加1")
     
     func perform() async throws -> some IntentResult {
-        let sharedDefaults = UserDefaults(suiteName: "group.com.sunyuan.MyCounterApp2")
-        let currentCounter = sharedDefaults?.integer(forKey: "counter") ?? 0
-        sharedDefaults?.set(currentCounter + 1, forKey: "counter")
+        SharedUserDefaults.shared.incrementCounter()
         
         // 刷新小组件
         WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
@@ -231,9 +227,7 @@ struct DecrementIntent: AppIntent {
     static var description = IntentDescription("将计数器值减少1")
     
     func perform() async throws -> some IntentResult {
-        let sharedDefaults = UserDefaults(suiteName: "group.com.sunyuan.MyCounterApp2")
-        let currentCounter = sharedDefaults?.integer(forKey: "counter") ?? 0
-        sharedDefaults?.set(currentCounter - 1, forKey: "counter")
+        SharedUserDefaults.shared.decrementCounter()
         
         // 刷新小组件
         WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
