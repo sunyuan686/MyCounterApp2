@@ -24,8 +24,10 @@ struct ContentView: View {
             
             HStack(spacing: 20) {
                 Button("-") {
+                    print("[ContentView] - 按钮点击，当前counter=\(counter)")
                     withAnimation(.easeInOut(duration: 0.2)) {
                         counter -= 1
+                        print("[ContentView] counter递减后=\(counter)")
                         SharedUserDefaults.shared.setCounter(counter)
                     }
                     // 刷新小组件
@@ -39,8 +41,10 @@ struct ContentView: View {
                 .scaleEffect(counter < 0 ? 1.1 : 1.0)
                 
                 Button("+") {
+                    print("[ContentView] + 按钮点击，当前counter=\(counter)")
                     withAnimation(.easeInOut(duration: 0.2)) {
                         counter += 1
+                        print("[ContentView] counter递增后=\(counter)")
                         SharedUserDefaults.shared.setCounter(counter)
                     }
                     // 刷新小组件
@@ -55,8 +59,10 @@ struct ContentView: View {
             }
             
             Button("重置") {
+                print("[ContentView] 重置按钮点击")
                 withAnimation(.easeInOut(duration: 0.3)) {
                     counter = 0
+                    print("[ContentView] counter已重置为0")
                     SharedUserDefaults.shared.resetCounter()
                 }
                 // 刷新小组件

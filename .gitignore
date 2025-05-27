@@ -14,6 +14,7 @@ build/
 *.moved-aside
 *.xcuserstate
 *.xcscheme
+.idea
 
 # Swift Package Manager
 #

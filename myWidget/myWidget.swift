@@ -11,11 +11,13 @@ import AppIntents
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), counter: 0)
+        print("[Widget-Provider] placeholder called")
+        return SimpleEntry(date: Date(), counter: 0)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let counter = SharedUserDefaults.shared.getCounter()
+        print("[Widget-Provider] getSnapshot called, counter=\(counter)")
         let entry = SimpleEntry(date: Date(), counter: counter)
         completion(entry)
     }
@@ -23,6 +25,7 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let counter = SharedUserDefaults.shared.getCounter()
         let currentDate = Date()
+        print("[Widget-Provider] getTimeline called, counter=\(counter), date=\(currentDate)")
         let entry = SimpleEntry(date: currentDate, counter: counter)
         
         // 每5分钟更新一次
@@ -212,6 +215,7 @@ struct IncrementIntent: AppIntent {
     static var description = IntentDescription("将计数器值增加1")
     
     func perform() async throws -> some IntentResult {
+        print("[Widget-IncrementIntent] perform called")
         SharedUserDefaults.shared.incrementCounter()
         
         // 刷新小组件
@@ -227,6 +231,7 @@ struct DecrementIntent: AppIntent {
     static var description = IntentDescription("将计数器值减少1")
     
     func perform() async throws -> some IntentResult {
+        print("[Widget-DecrementIntent] perform called")
         SharedUserDefaults.shared.decrementCounter()
         
         // 刷新小组件
