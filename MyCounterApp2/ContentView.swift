@@ -7,9 +7,78 @@
 
 import SwiftUI
 import WidgetKit
+import Combine
+
+// 创建一个ObservableObject来管理计数器状态和通知
+class CounterViewModel: ObservableObject {
+    @Published var counter: Int
+    private var cancellables = Set<AnyCancellable>()
+    
+    init() {
+        // 初始化时从SharedUserDefaults读取计数值
+        counter = SharedUserDefaults.shared.getCounter()
+        print("[CounterViewModel] 初始化，counter=\(counter)")
+        
+        // 监听应用进入前台通知
+        NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)
+            .sink { [weak self] _ in
+                print("[CounterViewModel] 应用进入前台，刷新数据")
+                self?.refreshCounterFromSharedDefaults()
+            }
+            .store(in: &cancellables)
+        
+        // 监听应用变为活跃状态通知
+        NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
+            .sink { [weak self] _ in
+                print("[CounterViewModel] 应用变为活跃状态，刷新数据")
+                self?.refreshCounterFromSharedDefaults()
+            }
+            .store(in: &cancellables)
+    }
+    
+    // 从SharedUserDefaults刷新计数器
+    func refreshCounterFromSharedDefaults() {
+        let updatedValue = SharedUserDefaults.shared.getCounter()
+        print("[CounterViewModel] 从SharedUserDefaults刷新计数器，旧值：\(counter)，新值：\(updatedValue)")
+        if counter != updatedValue {
+            counter = updatedValue
+        }
+    }
+    
+    // 递增计数器
+    func increment() {
+        print("[CounterViewModel] + 按钮点击，当前counter=\(counter)")
+        counter += 1
+        print("[CounterViewModel] counter递增后=\(counter)")
+        SharedUserDefaults.shared.setCounter(counter)
+        // 刷新小组件
+        WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
+    }
+    
+    // 递减计数器
+    func decrement() {
+        print("[CounterViewModel] - 按钮点击，当前counter=\(counter)")
+        counter -= 1
+        print("[CounterViewModel] counter递减后=\(counter)")
+        SharedUserDefaults.shared.setCounter(counter)
+        // 刷新小组件
+        WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
+    }
+    
+    // 重置计数器
+    func reset() {
+        print("[CounterViewModel] 重置按钮点击")
+        counter = 0
+        print("[CounterViewModel] counter已重置为0")
+        SharedUserDefaults.shared.resetCounter()
+        // 刷新小组件
+        WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
+    }
+}
 
 struct ContentView: View {
-    @State private var counter: Int = SharedUserDefaults.shared.getCounter()
+    // 使用StateObject确保视图模型在视图的生命周期内保持一致
+    @StateObject private var viewModel = CounterViewModel()
     
     var body: some View {
         VStack(spacing: 30) {
@@ -17,56 +86,41 @@ struct ContentView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
-            Text("\(counter)")
+            Text("\(viewModel.counter)")
                 .font(.system(size: 80, weight: .bold))
                 .foregroundColor(.blue)
-                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: counter)
+                .animation(.spring(response: 0.3, dampingFraction: 0.6), value: viewModel.counter)
             
             HStack(spacing: 20) {
                 Button("-") {
-                    print("[ContentView] - 按钮点击，当前counter=\(counter)")
                     withAnimation(.easeInOut(duration: 0.2)) {
-                        counter -= 1
-                        print("[ContentView] counter递减后=\(counter)")
-                        SharedUserDefaults.shared.setCounter(counter)
+                        viewModel.decrement()
                     }
-                    // 刷新小组件
-                    WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
                 }
                 .font(.title)
                 .frame(width: 60, height: 60)
                 .background(Color.red)
                 .foregroundColor(.white)
                 .clipShape(Circle())
-                .scaleEffect(counter < 0 ? 1.1 : 1.0)
+                .scaleEffect(viewModel.counter < 0 ? 1.1 : 1.0)
                 
                 Button("+") {
-                    print("[ContentView] + 按钮点击，当前counter=\(counter)")
                     withAnimation(.easeInOut(duration: 0.2)) {
-                        counter += 1
-                        print("[ContentView] counter递增后=\(counter)")
-                        SharedUserDefaults.shared.setCounter(counter)
+                        viewModel.increment()
                     }
-                    // 刷新小组件
-                    WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
                 }
                 .font(.title)
                 .frame(width: 60, height: 60)
                 .background(Color.green)
                 .foregroundColor(.white)
                 .clipShape(Circle())
-                .scaleEffect(counter > 0 ? 1.1 : 1.0)
+                .scaleEffect(viewModel.counter > 0 ? 1.1 : 1.0)
             }
             
             Button("重置") {
-                print("[ContentView] 重置按钮点击")
                 withAnimation(.easeInOut(duration: 0.3)) {
-                    counter = 0
-                    print("[ContentView] counter已重置为0")
-                    SharedUserDefaults.shared.resetCounter()
+                    viewModel.reset()
                 }
-                // 刷新小组件
-                WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
             }
             .font(.headline)
             .padding(.horizontal, 30)
@@ -76,6 +130,17 @@ struct ContentView: View {
             .clipShape(RoundedRectangle(cornerRadius: 8))
         }
         .padding()
+        .onAppear {
+            print("[ContentView] onAppear，刷新数据")
+            viewModel.refreshCounterFromSharedDefaults()
+        }
+        // 添加刷新按钮
+        .toolbar {
+            Button("刷新") {
+                print("[ContentView] 手动刷新按钮点击")
+                viewModel.refreshCounterFromSharedDefaults()
+            }
+        }
     }
 }
 
