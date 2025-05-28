@@ -4,9 +4,21 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AppIcon60x60@2x.png</key>
+		<data>
+		oHKeY0DL8NdgvDlhEWIdKes+AfE=
+		</data>
+		<key>AppIcon76x76@2x~ipad.png</key>
+		<data>
+		kMffdMfdGkKm7smoOSoQ4hGz7BQ=
+		</data>
+		<key>Assets.car</key>
+		<data>
+		vEExmiQqZH5gkOG9e4+vgiZ9iaE=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		0mihO7jJzd9KO1SKVIpdE2LQBTU=
+		BoKtpl37ILtU9SdDWA+JZvqIX9s=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -18,7 +30,7 @@
 		</data>
 		<key>PlugIns/myWidgetExtension.appex/Metadata.appintents/extract.actionsdata</key>
 		<data>
-		TtUPelcu9JOUE5SZ/u/yPmX3/H4=
+		BR9uJIpDzSXz371gBOLTD2Pc61k=
 		</data>
 		<key>PlugIns/myWidgetExtension.appex/Metadata.appintents/version.json</key>
 		<data>
@@ -26,15 +38,36 @@
 		</data>
 		<key>PlugIns/myWidgetExtension.appex/_CodeSignature/CodeResources</key>
 		<data>
-		DShqXZy8XaGQAji8pfTcIyyUCOs=
+		pM82ORQ5vbcbd9Qq4icVjrhG9dU=
 		</data>
 		<key>PlugIns/myWidgetExtension.appex/myWidgetExtension</key>
 		<data>
-		d6ydwN8fxX/liS7b7uDM8uffusk=
+		rGGie7gmOfsf1B4Ezo7Z+srPjzs=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AppIcon60x60@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZqrCCvf7b9HQA9CXAUW3yhsoMXYshFrsZXB7++JQFAM=
+			</data>
+		</dict>
+		<key>AppIcon76x76@2x~ipad.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mhbSrGVlynaAvwdPCmEEIPZU9jcE80FoUrzZ03gFGfk=
+			</data>
+		</dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dTfGgwcRq+BV15uR49oLItt/ANNupeOtf8yXP9Xrlk4=
+			</data>
+		</dict>
 		<key>PlugIns/myWidgetExtension.appex/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -46,7 +79,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2KwqOpS3Yf6ybCkT6+tOuPFHR0rcllMvC50Iz7+g4R0=
+			xljTXA7afLowN59lNy34zYCw0tnznCDSxrGvMtcpVx0=
 			</data>
 		</dict>
 		<key>PlugIns/myWidgetExtension.appex/Metadata.appintents/version.json</key>
@@ -60,14 +93,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gvRXWOoq2B7kZaT3kMj2kNYct9QHnUwV9KnX10gBivA=
+			Gem8RudfhuvrfwaZrmD6tqjZMCh86eCGTI5JBVhERKo=
 			</data>
 		</dict>
 		<key>PlugIns/myWidgetExtension.appex/myWidgetExtension</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wq99caWKdS+uFHo0jUgz5jLSzz13ki2pqaChOtc2iSw=
+			/N3vNGGHnwAcEpNzPH6uUgL6C1xCajd9HfXJu5BiKZU=
 			</data>
 		</dict>
 	</dict>

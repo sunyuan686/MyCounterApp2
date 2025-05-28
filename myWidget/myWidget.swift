@@ -12,21 +12,23 @@ import AppIntents
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         print("[Widget-Provider] placeholder called")
-        return SimpleEntry(date: Date(), counter: 0)
+        return SimpleEntry(date: Date(), counter: 0, settings: CounterSettings.defaultSettings)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let counter = SharedUserDefaults.shared.getCounter()
-        print("[Widget-Provider] getSnapshot called, counter=\(counter)")
-        let entry = SimpleEntry(date: Date(), counter: counter)
+        let settings = SharedUserDefaults.shared.getSettings()
+        print("[Widget-Provider] getSnapshot called, counter=\(counter), settings=\(settings)")
+        let entry = SimpleEntry(date: Date(), counter: counter, settings: settings)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let counter = SharedUserDefaults.shared.getCounter()
+        let settings = SharedUserDefaults.shared.getSettings()
         let currentDate = Date()
-        print("[Widget-Provider] getTimeline called, counter=\(counter), date=\(currentDate)")
-        let entry = SimpleEntry(date: currentDate, counter: counter)
+        print("[Widget-Provider] getTimeline called, counter=\(counter), settings=\(settings), date=\(currentDate)")
+        let entry = SimpleEntry(date: currentDate, counter: counter, settings: settings)
         
         // 每5分钟更新一次
         let nextUpdate = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!
@@ -38,6 +40,7 @@ struct Provider: TimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let counter: Int
+    let settings: CounterSettings
 }
 
 struct myWidgetEntryView : View {
@@ -87,7 +90,7 @@ struct myWidgetEntryView : View {
                 .buttonStyle(PlainButtonStyle())
             }
             
-            Text("点击 +/- 操作")
+            Text("步长: \(entry.settings.stepValue)")
                 .font(.caption2)
                 .foregroundColor(.secondary)
         }
@@ -105,6 +108,25 @@ struct myWidgetEntryView : View {
                 Text("当前值:")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                
+                Text("步长: \(entry.settings.stepValue)")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                
+                // 显示限制信息
+                Group {
+                    if let maxValue = entry.settings.maxValue {
+                        Text("最大值: \(maxValue)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    
+                    if let minValue = entry.settings.minValue {
+                        Text("最小值: \(minValue)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
             }
             
             Spacer()
@@ -174,6 +196,32 @@ struct myWidgetEntryView : View {
             }
             .padding()
             
+            // 显示设置信息
+            VStack(alignment: .leading, spacing: 4) {
+                Text("步长: \(entry.settings.stepValue)")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                
+                HStack(spacing: 20) {
+                    if let maxValue = entry.settings.maxValue {
+                        Text("最大值: \(maxValue)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    
+                    if let minValue = entry.settings.minValue {
+                        Text("最小值: \(minValue)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    
+                    Text("允许负数: \(entry.settings.allowNegative ? "是" : "否")")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+            }
+            .padding(.horizontal)
+            
             Text("上次更新: \(formatDate(entry.date))")
                 .font(.caption)
                 .foregroundColor(.secondary)
@@ -212,15 +260,14 @@ struct myWidget: Widget {
 // App Intent for increment
 struct IncrementIntent: AppIntent {
     static var title: LocalizedStringResource = "增加计数"
-    static var description = IntentDescription("将计数器值增加1")
-    
+    static var description = IntentDescription("增加计数器的值")
+
     func perform() async throws -> some IntentResult {
         print("[Widget-IncrementIntent] perform called")
+        // 使用更新后的incrementCounter方法，支持步长和最大值限制
         SharedUserDefaults.shared.incrementCounter()
-        
         // 刷新小组件
         WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
-        
         return .result()
     }
 }
@@ -228,15 +275,14 @@ struct IncrementIntent: AppIntent {
 // App Intent for decrement
 struct DecrementIntent: AppIntent {
     static var title: LocalizedStringResource = "减少计数"
-    static var description = IntentDescription("将计数器值减少1")
-    
+    static var description = IntentDescription("减少计数器的值")
+
     func perform() async throws -> some IntentResult {
         print("[Widget-DecrementIntent] perform called")
+        // 使用更新后的decrementCounter方法，支持步长、最小值限制和负数控制
         SharedUserDefaults.shared.decrementCounter()
-        
         // 刷新小组件
         WidgetCenter.shared.reloadTimelines(ofKind: "myWidget")
-        
         return .result()
     }
 }
@@ -244,21 +290,21 @@ struct DecrementIntent: AppIntent {
 #Preview(as: .systemSmall) {
     myWidget()
 } timeline: {
-    SimpleEntry(date: .now, counter: 0)
-    SimpleEntry(date: .now, counter: 5)
-    SimpleEntry(date: .now, counter: -3)
+    SimpleEntry(date: .now, counter: 0, settings: .defaultSettings)
+    SimpleEntry(date: .now, counter: 5, settings: .defaultSettings)
+    SimpleEntry(date: .now, counter: -3, settings: .defaultSettings)
 }
 
 #Preview(as: .systemMedium) {
     myWidget()
 } timeline: {
-    SimpleEntry(date: .now, counter: 0)
-    SimpleEntry(date: .now, counter: 42)
+    SimpleEntry(date: .now, counter: 0, settings: .defaultSettings)
+    SimpleEntry(date: .now, counter: 42, settings: .defaultSettings)
 }
 
 #Preview(as: .systemLarge) {
     myWidget()
 } timeline: {
-    SimpleEntry(date: .now, counter: 0)
-    SimpleEntry(date: .now, counter: 99)
+    SimpleEntry(date: .now, counter: 0, settings: .defaultSettings)
+    SimpleEntry(date: .now, counter: 99, settings: .defaultSettings)
 }

@@ -4,11 +4,19 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "我的计数器"
+      },
+      {
+        "comment": "",
         "key": "计数器"
       },
       {
         "comment": "",
         "key": "%lld"
+      },
+      {
+        "comment": "",
+        "key": "当前步长: %lld"
       },
       {
         "comment": "",
@@ -21,6 +29,18 @@
       {
         "comment": "",
         "key": "+"
+      },
+      {
+        "comment": "",
+        "key": "最大值: %lld"
+      },
+      {
+        "comment": "",
+        "key": "最小值: %lld"
+      },
+      {
+        "comment": "",
+        "key": "刷新"
       }
     ]
   },

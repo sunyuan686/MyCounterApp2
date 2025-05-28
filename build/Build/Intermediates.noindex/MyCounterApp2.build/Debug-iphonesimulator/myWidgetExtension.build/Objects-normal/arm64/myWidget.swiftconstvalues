@@ -4,7 +4,7 @@
     "mangledTypeName": "17myWidgetExtension15IncrementIntentV",
     "kind": "struct",
     "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
-    "line": 212,
+    "line": 261,
     "conformances": [
       "AppIntents.AppIntent",
       "AppIntents.PersistentlyIdentifiable",
@@ -39,7 +39,7 @@
         "isStatic": "true",
         "isComputed": "false",
         "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
-        "line": 213,
+        "line": 262,
         "valueKind": "RawLiteral",
         "value": "增加计数"
       },
@@ -50,9 +50,9 @@
         "isStatic": "true",
         "isComputed": "false",
         "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
-        "line": 214,
+        "line": 263,
         "valueKind": "RawLiteral",
-        "value": "将计数器值增加1"
+        "value": "增加计数器的值"
       }
     ]
   },
@@ -61,7 +61,7 @@
     "mangledTypeName": "17myWidgetExtension15DecrementIntentV",
     "kind": "struct",
     "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
-    "line": 229,
+    "line": 276,
     "conformances": [
       "AppIntents.AppIntent",
       "AppIntents.PersistentlyIdentifiable",
@@ -96,7 +96,7 @@
         "isStatic": "true",
         "isComputed": "false",
         "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
-        "line": 230,
+        "line": 277,
         "valueKind": "RawLiteral",
         "value": "减少计数"
       },
@@ -107,9 +107,9 @@
         "isStatic": "true",
         "isComputed": "false",
         "file": "/Users/sunyuan/develop/project/ios/MyCounterApp2/myWidget/myWidget.swift",
-        "line": 231,
+        "line": 278,
         "valueKind": "RawLiteral",
-        "value": "将计数器值减少1"
+        "value": "减少计数器的值"
       }
     ]
   }

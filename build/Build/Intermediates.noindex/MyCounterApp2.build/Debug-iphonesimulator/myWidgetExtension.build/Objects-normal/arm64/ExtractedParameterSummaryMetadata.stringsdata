@@ -1,7 +1,7 @@
 {
-  "source" : "ExtractedParameterSummaryMetadata",
   "version" : 1,
   "tables" : {
 
-  }
+  },
+  "source" : "ExtractedParameterSummaryMetadata"
 }

@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AAA149A12DE607560039A48F /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA149A02DE607560039A48F /* SharedUserDefaults.swift */; };
-		AAA149A22DE607560039A48F /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA149A02DE607560039A48F /* SharedUserDefaults.swift */; };
+		AA6C3ED92DE6E88800A4C2F6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C3ED62DE6E88800A4C2F6 /* SettingsView.swift */; };
+		AA6C3EDA2DE6E88800A4C2F6 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C3ED72DE6E88800A4C2F6 /* SettingsViewModel.swift */; };
+		AA6C3EDB2DE6E88800A4C2F6 /* CounterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C3ED82DE6E88800A4C2F6 /* CounterSettings.swift */; };
+		AA6C3EE42DE6F3F900A4C2F6 /* CounterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C3EE12DE6F3F900A4C2F6 /* CounterSettings.swift */; };
+		AA6C3EE62DE6F3F900A4C2F6 /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C3EE22DE6F3F900A4C2F6 /* SharedUserDefaults.swift */; };
 		AAA55F512DE3274E00D1E67A /* MyCounterApp2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA55F502DE3274E00D1E67A /* MyCounterApp2App.swift */; };
 		AAA55F532DE3274E00D1E67A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA55F522DE3274E00D1E67A /* ContentView.swift */; };
 		AAA55F552DE3274F00D1E67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA55F542DE3274F00D1E67A /* Assets.xcassets */; };
@@ -63,9 +66,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AAA1499E2DE602840039A48F /* MyCounterApp2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyCounterApp2.entitlements; sourceTree = "<group>"; };
-		AAA1499F2DE605620039A48F /* myWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myWidgetExtension.entitlements; sourceTree = "<group>"; };
-		AAA149A02DE607560039A48F /* SharedUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedUserDefaults.swift; sourceTree = "<group>"; };
+		AA6C3ED62DE6E88800A4C2F6 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AA6C3ED72DE6E88800A4C2F6 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		AA6C3ED82DE6E88800A4C2F6 /* CounterSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterSettings.swift; sourceTree = "<group>"; };
+		AA6C3EE12DE6F3F900A4C2F6 /* CounterSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterSettings.swift; sourceTree = "<group>"; };
+		AA6C3EE22DE6F3F900A4C2F6 /* SharedUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedUserDefaults.swift; sourceTree = "<group>"; };
 		AAA55F4D2DE3274E00D1E67A /* MyCounterApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCounterApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA55F502DE3274E00D1E67A /* MyCounterApp2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCounterApp2App.swift; sourceTree = "<group>"; };
 		AAA55F522DE3274E00D1E67A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,9 +124,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA6C3EE32DE6F3F900A4C2F6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AA6C3EE12DE6F3F900A4C2F6 /* CounterSettings.swift */,
+				AA6C3EE22DE6F3F900A4C2F6 /* SharedUserDefaults.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		AAA55F442DE3274E00D1E67A = {
 			isa = PBXGroup;
 			children = (
+				AA6C3EE32DE6F3F900A4C2F6 /* Shared */,
 				AAA1499F2DE605620039A48F /* myWidgetExtension.entitlements */,
 				AAA55F4F2DE3274E00D1E67A /* MyCounterApp2 */,
 				AAA55F602DE3275000D1E67A /* MyCounterApp2Tests */,
@@ -146,7 +161,9 @@
 		AAA55F4F2DE3274E00D1E67A /* MyCounterApp2 */ = {
 			isa = PBXGroup;
 			children = (
-				AAA149A02DE607560039A48F /* SharedUserDefaults.swift */,
+				AA6C3ED82DE6E88800A4C2F6 /* CounterSettings.swift */,
+				AA6C3ED62DE6E88800A4C2F6 /* SettingsView.swift */,
+				AA6C3ED72DE6E88800A4C2F6 /* SettingsViewModel.swift */,
 				AAA1499E2DE602840039A48F /* MyCounterApp2.entitlements */,
 				AAA55F502DE3274E00D1E67A /* MyCounterApp2App.swift */,
 				AAA55F522DE3274E00D1E67A /* ContentView.swift */,
@@ -362,9 +379,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6C3EDA2DE6E88800A4C2F6 /* SettingsViewModel.swift in Sources */,
 				AAA55F532DE3274E00D1E67A /* ContentView.swift in Sources */,
-				AAA149A12DE607560039A48F /* SharedUserDefaults.swift in Sources */,
+				AA6C3ED92DE6E88800A4C2F6 /* SettingsView.swift in Sources */,
 				AAA55F512DE3274E00D1E67A /* MyCounterApp2App.swift in Sources */,
+				AA6C3EE42DE6F3F900A4C2F6 /* CounterSettings.swift in Sources */,
+				AA6C3EE62DE6F3F900A4C2F6 /* SharedUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,8 +410,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA55F862DE3276F00D1E67A /* myWidgetBundle.swift in Sources */,
-				AAA149A22DE607560039A48F /* SharedUserDefaults.swift in Sources */,
 				AAA55F882DE3276F00D1E67A /* myWidget.swift in Sources */,
+				AA6C3EE42DE6F3F900A4C2F6 /* CounterSettings.swift in Sources */,
+				AA6C3EE62DE6F3F900A4C2F6 /* SharedUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
